@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container align-content-center">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/Logo Amazing Events.png" alt="Logo Amazing Events" width="200">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upcoming_events.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./past_events.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <h1 class="titulo-banner">CONTACT US</h1>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/cine-pexels.jpg" class="d-block w-100" alt="cine-pexels">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/costumeparty-pexels.jpg" class="d-block w-100" alt="costumeparty-pexels">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/gastronomicevent-pexels.jpg" class="d-block w-100" alt="gastronomicevent-pexels">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/concert-pexels.jpg" class="d-block w-100" alt="concert-pexels">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/maraton-pexels.jpg" class="d-block w-100" alt="maraton-pexels">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/museum-pexels.jpg" class="d-block w-100" alt="museum-pexels">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container col-lg-3 mt-5 mb-5 py-2 pb-2">
+
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="text" class="form-label">Mesagge:</label>
+                    <input type="text" class="form-control" id="text">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-2 mt-5">
+        <div class="container">
+            <nav class="row">
+                <ul class="col list-unstyled m-auto">
+                    <li class="d-flex gap-2">
+                        <a href="#">
+                            <img class="img-logo" src="./assets/facebook.png" alt="facebook">
+                        </a>
+                        <a href="#">
+                            <img class="img-logo" src="./assets/whatsapp.png" alt="whatsapp">
+                        </a>
+                        <a href="#">
+                            <img class="img-logo" src="./assets/instagram.png" alt="instagram">
+                        </a>
+                    </li>
+                </ul>
+                <div class="col d-flex align-items-center justify-content-end">
+                    <p class="m-0">FE14-TN DOMINGUEZ</p>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
