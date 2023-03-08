@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stats</title>
-    <link href="./style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
     <link rel="manifest" href="./assets/site.webmanifest">
+    <link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container align-content-center">
                 <a class="navbar-brand" href="./index.html">
-                    <img src="./assets/Logo Amazing Events.png" alt="Logo Amazing Events" width="200">
+                    <img src="./assets/LogoAmazingEvents.png" alt="Logo Amazing Events" width="200">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,13 +84,11 @@
 
     <main class="content">
         <div class="container">
-            <table class="table mt-5 mb-5 bg-secondary">
-                <thead class="bg-dark text-white">
-                    <tr>
-                        <th colspan="3">Events Statistics</th>
-                    </tr>
-                </thead>
-                <thead>
+            <table class="table caption-top table-hover mt-5 mb-5">
+                <caption class="bg-dark text-center text-light">
+                    Events Statistics
+                </caption>
+                <thead class="table-light" id="thead">
                     <tr>
                         <th scope="col">Events with the highest percentage of attendance</th>
                         <th scope="col">Events with the lowest percentage of attendance</th>
@@ -104,12 +102,10 @@
                         <td> </td>
                     </tr>
                 </tbody>
-                <thead class="bg-dark text-white">
-                    <tr>
-                        <th colspan="3">Upcoming Events Statistics By Category</th>
-                    </tr>
-                </thead>
-                <thead>
+            </table>
+            <table class="table caption-top table-hover mt-5 mb-5">
+                <caption class="bg-dark text-center text-light">Upcoming Events Statistics By Category</caption>
+                <thead class="table-light">
                     <tr>
                         <th scope="col">Categories</th>
                         <th scope="col">Revenues</th>
@@ -133,12 +129,10 @@
                         <td> </td>
                     </tr>
                 </tbody>
-                <thead class="bg-dark text-white">
-                    <tr>
-                        <th colspan="3">Past Events Statistics By Category</th>
-                    </tr>
-                </thead>
-                <thead>
+            </table>
+            <table class="table caption-top table-hover mt-5 mb-5">
+                <caption class="bg-dark text-center text-light">Past Events Statistics By Category</caption>
+                <thead class="table-light">
                     <tr>
                         <th scope="col">Categories</th>
                         <th scope="col">Revenues</th>
@@ -175,18 +169,18 @@
             </table>
         </div>
     </main>
-    <footer class="bg-dark text-white py-2 mt-5">
+    <footer class="bg-dark text-white py-2 mt-5 bottom-0">
         <div class="container">
             <nav class="row">
                 <ul class="col list-unstyled m-auto">
                     <li class="d-flex gap-2">
-                        <a href="#">
+                        <a href="https://es-la.facebook.com/login/device-based/regular/login/">
                             <img class="img-logo" src="./assets/facebook.png" alt="facebook">
                         </a>
-                        <a href="#">
+                        <a href="https://web.whatsapp.com/">
                             <img class="img-logo" src="./assets/whatsapp.png" alt="whatsapp">
                         </a>
-                        <a href="#">
+                        <a href="https://www.instagram.com/">
                             <img class="img-logo" src="./assets/instagram.png" alt="instagram">
                         </a>
                     </li>
