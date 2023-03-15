@@ -42,7 +42,7 @@ function printCards(arr) {
         return;
     };
     let cards = "";
-    arr.filter(i => i.date >= data.currentDate).forEach(element => {
+    arr.forEach(element => {
         cards += `
             <div class="col">
                 <div class="card h-100 text-center">
@@ -78,58 +78,24 @@ function filteredByCategory(arr) {
     return filteredArr;
 };
 
-// TASK 2
 /* 
+
 let card = document.getElementById("card-template");
 
-data.events.filter(i => i.date >= data.currentDate).forEach( i => {
+data.events.forEach(i => {
     card.innerHTML += `
     <div class="col">
-        <div class="card h-100 text-center">
-            <img src="${i.image}" class="card-img-top" alt="${i.name}">
-            <div class="card-body">
-            <h5 class="card-title">${i.name}</h5>
-            <p class="card-text">${i.description}</p>
-            <p style="display: inline-block; margin-right: 2rem;"> Price: ${i.price} </p>
-            <a href="details.html" class="btn btn-dark">View More</a>
-            </div>
-        </div>
+    <div class="card h-100 text-center">
+    <img src="${i.image}" class="card-img-top" alt="${i.name}">
+    <div class="card-body">
+    <h5 class="card-title">${i.name}</h5>
+    <p class="card-text">${i.description}</p>
+    <p style="display: inline-block; margin-right: 2rem;"> Price: ${i.price} </p>
+    <a href="details.html" class="btn btn-dark">View More</a>
+    </div>
+    </div>
     </div>
     `;
 });
-*/
-
-/* 
-
-let card = document.getElementById("card-template");
-
-showCard(data.events, card);
-
-function showCard(arr, container) {
-
-    let element = "";
-
-    for (const evento of arr) {
-
-        if (evento.date <= data.currentDate) continue
-
-        element += `
-        <div class="col">
-            <div class="card h-100 text-center">
-                <img src="${evento.image}" class="card-img-top" alt="${evento.name}">
-                <div class="card-body">
-                <h5 class="card-title">${evento.name}</h5>
-                <p class="card-text">${evento.description}</p>
-                <p style="display: inline-block; margin-right: 2rem;"> Price: ${evento.price} </p>
-                <a href="details.html" class="btn btn-dark">View More</a>
-                </div>
-            </div>
-        </div>`
-
-    };
-
-    container.innerHTML = element;
-
-}; 
 
 */

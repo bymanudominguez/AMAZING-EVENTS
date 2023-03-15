@@ -93,3 +93,10 @@ tbody {
 .card-body-details {
     border: none;
 }
+
+#button-contact {
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: block;
+    padding: 0 3rem 0;
+}
