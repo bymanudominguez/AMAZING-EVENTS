@@ -100,3 +100,9 @@ tbody {
     display: block;
     padding: 0 3rem 0;
 }
+
+.search-form-container{
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 300px;
+}

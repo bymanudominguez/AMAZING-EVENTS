@@ -51,7 +51,7 @@ function printCards(arr) {
                     <h5 class="card-title">${element.name}</h5>
                     <p class="card-text">${element.description}</p>
                     <p style="display: inline-block; margin-right: 2rem;"> Price: ${element.price} </p>
-                    <a href="details.html" class="btn btn-dark">View More</a>
+                    <a href="details.html?id=${element.id}" class="btn btn-dark">View More</a>
                     </div>
                 </div>
             </div>
