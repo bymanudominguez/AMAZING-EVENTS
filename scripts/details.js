@@ -21,12 +21,11 @@ async function callAPI() {
 
     const detailsCard = document.getElementById("details-card");
 
-    if (evento.assistance) {
-        detailsCard.innerHTML += `
+    detailsCard.innerHTML += `
         <div class="card card-details col-lg-12">
             <div class="row g-0">
                 <div class="col-md-6">
-                    <img src="${evento.image}" class="img-fluid" alt="${evento.name}">
+                    <img src="${evento.image}" class="img-fluid details-card-img" alt="${evento.name}">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body card-body-details">
@@ -36,33 +35,12 @@ async function callAPI() {
                         <p class="card-text"><strong>Date:</strong> ${evento.date}</p>
                         <p class="card-text"><strong>Price:</strong> $${evento.price}</p>
                         <p class="card-text"><strong>Capacity:</strong> ${evento.capacity}</p>
-                        <p class="card-text"><strong>Attendance:</strong> ${evento.assistance}</p>
+                        <p class="card-text"><strong>${typeof evento.assistance === "number" ? 'Attendance:':'Estimated attendance:'}</strong> ${evento.assistance ?? evento.estimate}</p>
                     </div>
                 </div>
             </div>
         </div>
-`;
-    } else { detailsCard.innerHTML += `
-    <div class="card card-details col-lg-12">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <img src="${evento.image}" class="img-fluid" alt="${evento.name}">
-            </div>
-            <div class="col-md-6">
-                <div class="card-body card-body-details">
-                    <h2 class="card-title">${evento.name}</h2>
-                    <p class="card-text">${evento.description}</p>
-                    <p class="card-text"><strong>Place:</strong> ${evento.place}</p>
-                    <p class="card-text"><strong>Date:</strong> ${evento.date}</p>
-                    <p class="card-text"><strong>Price:</strong> $${evento.price}</p>
-                    <p class="card-text"><strong>Capacity:</strong> ${evento.capacity}</p>
-                    <p class="card-text"><strong>Estimated attendance:</strong> ${evento.estimate}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-`; };
-
+    `;
 };
 
 callAPI();
