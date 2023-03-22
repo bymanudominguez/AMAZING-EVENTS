@@ -60,7 +60,8 @@ async function callAPI() {
     function printTableData2(arr) {
 
         let tableData = "";
-        let statistics = statisticsByCategory(upcomingEvents(arr));
+        let upcomingEvents = arr.filter(event => event.date >= data.currentDate);
+        let statistics = statisticsByCategory(upcomingEvents);
 
         statistics.forEach(element => {
             tableData += `
@@ -75,36 +76,36 @@ async function callAPI() {
 
         function statisticsByCategory(arr) {
             let statisticsArr = [];
-            arr.forEach(event => {
-                if (!statisticsArr.some(element => element.category === event.category)) {
-                    statisticsArr.push({
-                        count: 1,
-                        category: event.category,
-                        revenues: event.estimate * event.price,
-                        percentageOfAttendance: (event.estimate / event.capacity) * 100,
-                    });
 
-                } else {
-                    const statistic = statisticsArr.find(element => element.category === event.category)
-                    const statisticIndex = statisticsArr.findIndex(element => element.category === event.category)
+            arr
+                .map(event => ({
+                    category: event.category,
+                    revenues: event.estimate * event.price,
+                    percentageOfAttendance: (event.estimate / event.capacity) * 100,
+                }))
+                .forEach(event => {
+                    const statisticIndex = statisticsArr.findIndex(element => element.category === event.category);
 
-                    statisticsArr.splice(statisticIndex, 1, {
-                        count: statistic.count + 1,
-                        category: statistic.category,
-                        revenues: statistic.revenues + (event.estimate * event.price),
-                        percentageOfAttendance: statistic.percentageOfAttendance + ((event.estimate / event.capacity) * 100),
-                    });
-                };
-            });
+                    if (statisticIndex === -1) {
+                        statisticsArr.push({
+                            count: 1,
+                            category: event.category,
+                            revenues: event.revenues,
+                            percentageOfAttendance: event.percentageOfAttendance,
+                        });
+                    } else {
+                        const statistic = statisticsArr.at(statisticIndex);
+
+                        statisticsArr.splice(statisticIndex, 1, {
+                            count: statistic.count + 1,
+                            category: statistic.category,
+                            revenues: statistic.revenues + event.revenues,
+                            percentageOfAttendance: statistic.percentageOfAttendance + event.percentageOfAttendance,
+                        });
+                    };
+                });
             return statisticsArr
         };
-
-        function upcomingEvents(arr) {
-            let upcomingEvents = arr.filter(event => event.date >= data.currentDate);
-
-            return upcomingEvents
-        }
-
     };
 
     // Third table
@@ -116,7 +117,8 @@ async function callAPI() {
     function printTableData3(arr) {
 
         let tableData = "";
-        let statistics = statisticsByCategory(pastEvents(arr));
+        let pastEvents = arr.filter(event => event.date < data.currentDate);
+        let statistics = statisticsByCategory(pastEvents);
 
         statistics.forEach(element => {
             tableData += `
@@ -131,35 +133,36 @@ async function callAPI() {
 
         function statisticsByCategory(arr) {
             let statisticsArr = [];
-            arr.forEach(event => {
-                if (!statisticsArr.some(element => element.category === event.category)) {
-                    statisticsArr.push({
-                        count: 1,
-                        category: event.category,
-                        revenues: event.assistance * event.price,
-                        percentageOfAttendance: (event.assistance / event.capacity) * 100,
-                    });
 
-                } else {
-                    const statistic = statisticsArr.find(element => element.category === event.category)
-                    const statisticIndex = statisticsArr.findIndex(element => element.category === event.category)
+            arr
+                .map(event => ({
+                    category: event.category,
+                    revenues: event.assistance * event.price,
+                    percentageOfAttendance: (event.assistance / event.capacity) * 100,
+                }))
+                .forEach(event => {
+                    const statisticIndex = statisticsArr.findIndex(element => element.category === event.category);
 
-                    statisticsArr.splice(statisticIndex, 1, {
-                        count: statistic.count + 1,
-                        category: statistic.category,
-                        revenues: statistic.revenues + (event.assistance * event.price),
-                        percentageOfAttendance: statistic.percentageOfAttendance + ((event.assistance / event.capacity) * 100),
-                    });
-                };
-            });
+                    if (statisticIndex === -1) {
+                        statisticsArr.push({
+                            count: 1,
+                            category: event.category,
+                            revenues: event.revenues,
+                            percentageOfAttendance: event.percentageOfAttendance,
+                        });
+                    } else {
+                        const statistic = statisticsArr.at(statisticIndex);
+
+                        statisticsArr.splice(statisticIndex, 1, {
+                            count: statistic.count + 1,
+                            category: statistic.category,
+                            revenues: statistic.revenues + event.revenues,
+                            percentageOfAttendance: statistic.percentageOfAttendance + event.percentageOfAttendance,
+                        });
+                    };
+                });
             return statisticsArr
         };
-
-        function pastEvents(arr) {
-            let pastEvents = arr.filter(event => event.date < data.currentDate);
-
-            return pastEvents
-        }
     };
 };
 
